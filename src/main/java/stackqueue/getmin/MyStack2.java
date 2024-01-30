@@ -2,12 +2,12 @@ package stackqueue.getmin;
 
 import java.util.Stack;
 
-public class MyStack1 {
+public class MyStack2 {
     private static Stack<Integer> stackData;
     private static Stack<Integer> stackMin;
 
     public static void main(String[] args) {
-        MyStack1 stack1 = new MyStack1();
+        MyStack2 stack1 = new MyStack2();
         System.out.println("入栈");
         stack1.push(3);
         stack1.push(4);
@@ -27,7 +27,7 @@ public class MyStack1 {
 
     }
 
-    public MyStack1() {
+    public MyStack2() {
         this.stackData = new Stack<Integer>();
         this.stackMin = new Stack<Integer>();
     }
@@ -37,6 +37,9 @@ public class MyStack1 {
             stackMin.push(newNum);
         } else if(newNum < getMin()) {
             stackMin.push(newNum);
+        } else {
+            int newMin = stackMin.peek();
+            stackMin.push(newMin);
         }
         stackData.push(newNum);
     }
@@ -52,10 +55,8 @@ public class MyStack1 {
         if(stackData.isEmpty()) {
             throw new RuntimeException("your stack is empty");
         }
-        int value = stackData.pop();
-        if(value == getMin()) {
-            stackMin.pop();
-        }
-        return value;
+        stackMin.pop();
+        return stackData.pop();
     }
+
 }
