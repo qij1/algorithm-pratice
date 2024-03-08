@@ -2,6 +2,9 @@ package stackqueue.getmin;
 
 import java.util.Stack;
 
+/**
+ * 1.设计有getMin功能的栈
+ */
 public class MyStack1 {
     private static Stack<Integer> stackData;
     private static Stack<Integer> stackMin;

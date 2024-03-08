@@ -2,6 +2,7 @@ package stackqueue.getmin;
 
 import java.util.Stack;
 
+
 public class MyStack2 {
     private static Stack<Integer> stackData;
     private static Stack<Integer> stackMin;
